@@ -11,7 +11,7 @@
 
                 <div class="text-center text-3xl font-medium w-full">Aria HR Suite</div>
                 <div class="text-center text-2xl font-medium w-full my-4">Login</div>
-                <form class="w-full">
+                <form wire:submit.prevent='login' class="w-full">
                     <div class="mb-4">
                         <label for="email-address-icon" class="block mb-2 text-sm font-medium text-gray-900">Email
                             Address</label>
@@ -25,10 +25,14 @@
                                         d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
                                 </svg>
                             </div>
-                            <input type="email" id="email-address-icon"
+                            <input wire:model.blur='form.email' type="email" id="email-address-icon"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
                                 placeholder="Email address">
                         </div>
+
+                        @error('form.email') <div class="mt-2 text-xs text-red-500">{{ $message }}</div> @enderror
+                        @if (session('error')) <div class="mt-2 text-xs text-red-500">{{ session('error') }}</div> @endif
+
                     </div>
                     <div class="mb-4 md:mb-2">
                         <label for="email-address-icon"
@@ -41,21 +45,27 @@
                                         d="M14 7h-1.5V4.5a4.5 4.5 0 1 0-9 0V7H2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2Zm-5 8a1 1 0 1 1-2 0v-3a1 1 0 1 1 2 0v3Zm1.5-8h-5V4.5a2.5 2.5 0 1 1 5 0V7Z" />
                                 </svg>
                             </div>
-                            <input type="password" id="password-icon"
+                            <input wire:model.blur='form.password' type="password" id="password-icon"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
                                 placeholder="Password">
                         </div>
-                        <div class="mb-6 md:mt-2 md:mb-8 w-full">
-                            <a href="#">
+                        <div class="flex justify-between mb-6 mt-2 md:mb-8 w-full">
+                            <div class="text-xs text-red-500">
+                                @error('form.password')
+                                    {{ $message }}
+                                @enderror
+                            </div>
+                            <a href="#" class=" text-end">
                                 <p class="text-xs font-medium text-end text-primary">Forgot Password</p>
                             </a>
                         </div>
-                        <div>
-                            <button type="submit"
-                                class="bg-primary flex flex-col justify-center w-full h-12 items-center rounded-lg hover:bg-primaryHover transition ease-in-out">
-                                <span class="text-center font-medium text-secondary">Login</span>
-                            </button>
-                        </div>
+                    </div>
+                    <div>
+                        <button type="submit"
+                            class="bg-primary flex flex-col justify-center w-full h-12 items-center rounded-lg hover:bg-primaryHover transition ease-in-out">
+                            <span class="text-center font-medium text-secondary">Login</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

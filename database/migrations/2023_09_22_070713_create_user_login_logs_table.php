@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('user_login_logs', function (Blueprint $table) {
             $table->id();
 			$table->bigInteger('user_id')->unsigned()->nullable();
+            $table->longText('description');
             $table->timestamps();
             $table->softDeletes();
         });

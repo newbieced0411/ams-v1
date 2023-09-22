@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public static function encodeLogin(User $user)
+    {   
+        $user->lastLogin = now();
+        $user->save();
+    }
 }
