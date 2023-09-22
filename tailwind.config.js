@@ -12,6 +12,7 @@ export default {
             primary: "#283f7e",
             secondary: "#DEA35A",
             primaryBg: "#131d37",
+            primaryHover: "#3d528a",
             // ...
         },
         screens: {

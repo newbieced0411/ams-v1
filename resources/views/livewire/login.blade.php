@@ -45,17 +45,17 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5"
                                 placeholder="Password">
                         </div>
-                    </div>
-                    <div class="mb-6 md:mb-10 w-full">
-                        <a href="#">
-                            <p class="text-xs font-medium text-end text-primary">Forgot Password</p>
-                        </a>
-                    </div>
-                    <div>
-                        <button class="bg-primary flex flex-col justify-center w-full h-12 items-center rounded-lg">
-                            <span class="text-center font-medium text-secondary">Login</span>
-                        </button>
-                    </div>
+                        <div class="mb-6 md:mt-2 md:mb-8 w-full">
+                            <a href="#">
+                                <p class="text-xs font-medium text-end text-primary">Forgot Password</p>
+                            </a>
+                        </div>
+                        <div>
+                            <button type="submit"
+                                class="bg-primary flex flex-col justify-center w-full h-12 items-center rounded-lg hover:bg-primaryHover transition ease-in-out">
+                                <span class="text-center font-medium text-secondary">Login</span>
+                            </button>
+                        </div>
                 </form>
             </div>
         </div>
