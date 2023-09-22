@@ -11,7 +11,7 @@
 
 <body class="antialiased relative">
     @auth
-        <nav></nav>
+        <nav>eehehehe</nav>
     @endauth
     <main>
         {{ $slot }}
